@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <title>Розрахунок антени павука</title>
+
+    <link rel="stylesheet" href="../css/antenna.css">
+</head>
+<body>
+<object data="../menu.html" type="text/html" aria-label="Site menu"></object>
+
+<script src="../js/aerial.js"></script>
+<script src="../js/calc.js"></script>
+<script src="../js/util.js"></script>
+
+<div class="OnLineCalculate">
+    <h2>Розрахунок антени павука</h2>
+    <br>
+    <span>Введіть дані:</span>
+    <hr>
+    <form id="holder" name="holder">
+        <table>
+            <tbody>
+                <tr>
+                    <td >Частота:</td>
+                    <td ><input maxlength="10" name="freq" onkeyup="checnum(this)" size="12" type="text" value=""></td>
+                    <td >Мгц</td>
+                    <td >
+                        <select name="cent_freq" onclick="setCenterFrequency()">
+                            <option selected="" value="">Ввести частоту вручну</option>
+                            <option value="144">144 МГц</option>
+                            <option value="433.9">LPD</option>
+                            <option value="446">PMR</option>
+                            <option value="462.64">GMRS</option>
+                            <option value="465.135">FRS</option>
+                            <option value="811">LTE 800 (band20)</option>
+                            <option value="925">GSM 900</option>
+                            <option value="1795">LTE 1800 (band 3)</option>
+                            <option value="2045">LTE 2100 (band 1)</option>
+                            <option value="2350">LTE 2300 (band 40)</option>
+                            <option value="2445">Wi-Fi 2400</option>
+                            <option value="2600">LTE 2600 (band 7)</option>
+                            <option value="5530">Wi-Fi 5500</option>
+                        </select>
+                    </td>
+                    <td   rowspan="2">
+                        <img alt="" src="../img/spider.svg" style="display: block; margin: 5px auto;" width="300px">
+                    </td>
+                </tr>
+                <tr>
+                    <td >Діаметр дроту:</td>
+                    <td ><input maxlength="10" name="d" onkeyup="checnum(this)" size="12" type="text" value="1"></td>
+                    <td  colspan="3">мм</td>
+                </tr>
+            <tr>
+                <td colspan="5">
+                    <div class="button1" onclick="calc()">Розрахувати</div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        <hr>
+        <div class="OnLineResult"><span>РЕЗУЛЬТАТ:</span>
+            <hr>
+            <table>
+                <tbody>
+                <tr>
+                    <td>Довжина штира A</td>
+                    <td><input maxlength="10" name="a" readonly="" size="25" style="background: #EEEEEE;" type="text"
+                               value=""></td>
+                </tr>
+                <tr>
+                    <td>Довжина противаг B</td>
+                    <td><input maxlength="10" name="b" readonly="" size="25" style="background: #EEEEEE;" type="text"
+                               value=""></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <div><button class="buttonHelp" onclick="popitup('help/spiderHelp.html', 'spiderHelp')">Допомога</button> </div>
+</div>
+</body>
+</html>
